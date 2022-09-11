@@ -7,11 +7,12 @@ javascript:(
       styleEl.textContent = 'html * {pointer-events: none !important;}'
       document.designMode = "on"
     }
-    const styleEl = document.querySelector(`div#${CSS.escape(location.pathname)}`)
+    const styleEl = document.querySelector(`style#${CSS.escape(location.pathname)}`)
     if (styleEl === null) {
       designModeOn()
     } else {
       styleEl.remove()
+      document.designMode = "off"
     }
   }
 )()

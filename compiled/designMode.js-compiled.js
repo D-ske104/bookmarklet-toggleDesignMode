@@ -1,1 +1,1 @@
-(function(){const a=document.createElement("style#designMode");document.head.appendChild(a);a.textContent="html * {pointer-events: none !important;}";document.designMode="on"})();
+(function(){var a=document.querySelector(`style#${CSS.escape(location.pathname)}`);null===a?(a=document.createElement("style"),a.setAttribute("id",`${location.pathname}`),document.head.appendChild(a),a.textContent="html * {pointer-events: none !important;}",document.designMode="on"):(a.remove(),document.designMode="off")})();
